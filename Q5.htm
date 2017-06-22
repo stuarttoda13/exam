@@ -32,7 +32,36 @@
             }
         </style>
         <script>
+    function compute(){
+        var form1 = document.getElementById("form1");
+        var first = form1.from.value;
+        var last = form1.to.value;
 
+        if(first == "" || last == ""){
+            alert("Put values in the inputs!")
+        }
+        else if(isNaN(first)||isNaN(last)){
+            alert("Put numerical values in!");
+        }
+        else if(first>last){
+            alert("put the first number smaller than second!")
+        }
+        else{
+        var text = document.getElementById("result");
+        var x;
+        first = parseInt(first);
+        last = parseInt(last);
+        last = last - 1
+        
+        var sum= first + last;
+        
+        for (x=first; x<=last;x++){
+            sum = sum +x;
+}}
+
+        text.innerHTML = sum;
+        return false;
+    }
         </script>
     </head>
 
@@ -59,7 +88,7 @@
 
             </p>
             <p>
-                <input type="submit" name="Sum" value="SUM">
+                <input onclick="return compute()" type="submit" name="Sum" value="SUM">
                 <input type="reset" name="reset" value="CLEAR">
             </p>
             <p>The sum is <span id="result"></span>.</p>
